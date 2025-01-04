@@ -1,5 +1,6 @@
 const jsonFile = require('jsonfile');
 const getSign = require('../util/sign');
+const globalCookie = require('../util/globalCookie');
 const axios = require('axios');
 
 const user = {
@@ -49,7 +50,7 @@ const user = {
         method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			"Cookie": globalCookie ? globalCookie.userCookie() : {}
+			"Cookie": globalCookie ? globalCookie.userCookie() : {}，
 		},
         data: JSON.stringify(data),
     };
